@@ -1,0 +1,62 @@
+<div class=" flex align-items-center justify-content-center min-h-screen">
+    <div class="flex flex-column align-items-center justify-content-center">
+
+        <div style="border-radius:56px;">
+            <div class="w-full surface-card py-6 px-5 sm:px-5" style="border-radius:53px">
+                <div class="text-center mb-5">
+                  
+                   
+                    <div class="text-900 text-3xl font-medium mb-3">Masraf Takip Yönetim Paneli</div>
+                    <span class="text-600 font-medium">Giriş</span>
+                    <br>
+                  
+
+                    <div class="panel-body p-3">
+                        <form [formGroup]="loginForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required' ,'email')">
+                                    <span class="pi pi-user p-2"></span>
+                                    <input formControlName="email" type="text"maxlength="50" placeholder="Email">
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required' ,'email')"class="text-danger">*Email zorunludur</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required' ,'password')">
+                                    <span class="pi pi-lock p-2"></span>
+                                    <input formControlName="password" [type]="type" placeholder="Şifre">
+                                    <span (click)="hideShowPass()" class="pi {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <div class="flex align-items-center flex-column justify-content-between mb-2 gap-2">
+                                <div class="flex align-items-center flex-column justify-content-center">
+                                    <div class="mb-3"> 
+                                    <img [src]="captcha.captchaImage" style="width: 150px; height: 90px; border-radius: 0;"/>
+                                    <div class="grid ">
+                                        <div class="flex mt-3" style="justify-content: space-between;" >
+                                            <input formControlName="captchaCode" type="text"  placeholder="Değeri giriniz." toUpperCase [(ngModel)]="captchaCode"/>
+                                            <button pButton pTooltip="Yenile" icon="pi pi-refresh" class="p-button btnDelete p-button-outlined" (click)="getCaptcha()" ></button>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>  
+                                
+                            </div>
+                            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required' ,'password')" class="text-danger">*Şifre Zorunludur</small>
+                            <div class="form-inline fr mt-4">
+                                <a id="forget" class="font-weight-bold" (click)="openForgotPasswordDialog()">Şifremi Unuttum?</a>
+
+                            </div>
+
+
+                            <!--button (click)="onLogin()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button-->
+                            <button class="p-button-success w-full" pButton pRipple label="Giriş Yap" (click)="onLogin()"></button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

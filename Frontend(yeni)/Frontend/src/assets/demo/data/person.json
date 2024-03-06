@@ -1,0 +1,24 @@
+{
+	"data": [
+		{"id":1,"username":"Tresa1","name":"Biner","surname":"Biner","identityno":"213123131",
+		"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	},
+	{"id":2,"username":"Tresa2","name":"Biner","surname":"Biner","identityno":"213123131",
+		"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	},
+	{"id":3,"username":"Tresa3","name":"Biner","surname":"Biner","identityno":"213123131",
+	"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	},
+	{"id":4,"username":"Tresa4","name":"Biner","surname":"Biner","identityno":"213123131",
+	"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	},
+	{"id":5,"username":"Tresa5","name":"Biner","surname":"Biner","identityno":"213123131",
+	"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	},
+	{"id":6,"username":"Tresa6","name":"Biner","surname":"Biner","identityno":"213123131",
+	"phonenumber":"1313131231","email":"tbiner0","types":"1"
+	}
+
+
+	]
+}

@@ -1,0 +1,14 @@
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MasrafTakipYonetim.Application.Cqrs.Commands.RoleUserRequestsAndResponses
+{
+    public class CreateUserRoleCommandResponse:IRequest<CreateUserRoleCommandRequest>
+    {
+        public string Message { get; set; }
+    }
+}

@@ -1,0 +1,29 @@
+.p-dialog .p-dialog-header {
+    background: #017bc2;
+    color: #ffffff;
+    padding: 1.0rem;
+  }
+
+  .p-dialog .p-dialog-header .p-dialog-header-icon {
+    color: #ffffff;
+  }
+
+  .observerCol12 .p-autocomplete-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55rem;
+  }
+
+  .observerCol6 .p-autocomplete-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30rem;
+  }
+
+  .observerCol12 .p-autocomplete-item {
+      background-color: #f8f9fa !important;
+  }
+
+  .observerCol6 .p-autocomplete-item {
+    background-color: #f8f9fa !important;
+}

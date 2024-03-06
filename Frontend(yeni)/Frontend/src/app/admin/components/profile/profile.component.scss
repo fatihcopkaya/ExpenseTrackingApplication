@@ -1,0 +1,32 @@
+.card-container {
+    display:flex;
+    
+  }
+  
+  .card {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
+
+  .p-inputtext {
+    
+    height: 30px;
+    font-size: 13px;
+    
+}
+
+.field.grid > label {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    
+}
+.toolbar-right {
+  margin-left: auto;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between; /* İçindeki elemanları sağa ve sola doğru dağıtır */
+  align-items: center; /* Elemanları düzgün hizalar */
+}

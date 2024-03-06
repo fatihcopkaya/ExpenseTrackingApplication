@@ -1,0 +1,83 @@
+<div class="col-12">
+    <h1>Profil Bilgisi</h1>
+    <div class="card p-fluid">
+        <form [formGroup]="profileInfoForm">
+            <p-toast></p-toast>
+            
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <!-- Sol tarafta herhangi bir içerik varsa eklenebilir -->
+                </div>
+                <div class="toolbar-right">
+                    <button pTooltip="Düzenle" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="updateProfileInfo(profileInfo)"></button>
+                </div>
+            </div>
+            
+            
+            <div class="field grid">
+                <label htmlFor="firstName" class="col-6 mb-2 md:col-1 md:mb-0">Adı</label>
+                <div class="col-6 md:col-5">
+                    <input pInputText id="firstName" type="text" formControlName="firstName" required [readonly]="isReadOnly" />
+                </div>
+                <label htmlFor="lastName" class="col-12 mb-2 md:col-1 md:mb-0">Soyadı</label>
+                <div class="col-6 md:col-5">
+                    <input pInputText id="lastName" type="text" formControlName="lastName" required [readonly]="isReadOnly"/>
+                </div> 
+            </div>
+            <div class="field grid">
+                <label htmlFor="phoneNumber" class="col-6 mb-2 md:col-1 md:mb-0">Telefon</label>
+                <div class="col-6 md:col-5">
+                    <input pInputText id="phoneNumber" type="text" formControlName="phoneNumber" required [readonly]="isReadOnly" />
+                </div>
+                <label htmlFor="email" class="col-12 mb-2 md:col-1 md:mb-0">E-Posta</label>
+                <div class="col-6 md:col-5">
+                    <input pInputText id="email" type="text" formControlName="email" required [readonly]="isReadOnly" />
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+
+
+<p-dialog [(visible)]="profileInfoDialog" *ngIf="profileInfoDialog" [modal]="true" [contentStyle]="{ 'overflow': 'visible' }" [style]="{ width: '450px' }">
+    <ng-template pTemplate="content">
+        <form  [formGroup]="profileInfoForm">
+            <div class="p-fluid">
+                <div class="p-field">
+                    <label for="firstName">Adı</label>
+                    <input type="text" pInputText id="firstName" formControlName="firstName" />
+                    <small class="p-error" *ngIf="submitted && profileInfoForm.controls['firstName'].invalid">Adı alanı zorunludur.</small>
+                </div>
+
+                <div class="p-field">
+                    <label for="lastName">Soyadı</label>
+                    <input type="text" pInputText id="lastName" formControlName="lastName" />
+                    <small class="p-error" *ngIf="submitted && profileInfoForm.controls['lastName'].invalid">Soyadı alanı zorunludur.</small>
+                </div>
+
+                <div class="p-field">
+                    <label for="email">e-mail</label>
+                    <input type="email" pInputText id="email" formControlName="email" />
+                    <small class="p-error" *ngIf="submitted && profileInfoForm.controls['email'].invalid">Email alanı zorunludur.</small>
+                </div>
+
+                <div class="p-field">
+                    <label for="phoneNumber">Telefon Numarası</label>
+                    <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber" />
+                    <small class="p-error" *ngIf="submitted && profileInfoForm.controls['phoneNumber'].invalid">Telefon alanı zorunludur.</small>
+                </div>
+            </div>
+
+            <div class="p-dialog-footer">
+                <button pButton type="button" label="İptal" icon="pi pi-times" class="p-button-danger" (click)="hideDialog()"></button>
+                <button pButton type="submit" label="Kaydet" icon="pi pi-check" class="p-button-success"(click)="saveProfileInfo()"></button>
+            </div>
+        </form>
+    </ng-template>
+</p-dialog>
+
+            
+

@@ -1,0 +1,26 @@
+<div class="layout-topbar">
+    <span style="display: flex;" class="layout-topbar-logo" routerLink="/admin/dashboard">
+        <img src="../../../../../assets/layout/images/logo-removebg-preview.png" alt="logo" width="150" height="150">
+   </span>
+
+    <button #menubutton pTooltip="Menüyü açmak veya gizlemek için basınız" class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <!-- <div class="flex justify-content align-items">
+        <span style="font-size: 1.2rem;padding-right: 10px;padding-left: 10px;position:relative;top:-3px;">Test</span>
+    </div> -->
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <div>
+            <i class="pi pi-user" style="font-size: 1.5rem; padding-right: 10px; padding-left: 10px; margin-bottom: 10px;"></i>
+             <span style="font-size: 1.2rem; padding-right: 10px; padding-left: 10px; position: relative; top: -3px;">{{getUsername()}}</span>
+            <button type="button" tooltipPosition="left" pTooltip="Çıkış" pButton icon="pi pi-sign-out" style="margin-left:.25em" (click)="logout()"></button>
+        </div>
+    </div>
+    
+</div>

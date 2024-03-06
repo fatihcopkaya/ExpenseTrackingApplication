@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MasrafTakipYonetim.Application": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

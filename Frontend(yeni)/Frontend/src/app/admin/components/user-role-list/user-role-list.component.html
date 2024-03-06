@@ -1,0 +1,146 @@
+<!-- <p-toast></p-toast>
+
+<div class="card">
+
+
+    <p-table #dt [value]="data" [lazy]="true" (onLazyLoad)="loadData($event)" [pageLinks]="5" [loading]="loading"
+        [showPageLinks]="true" responsiveLayout="stack" [rows]="10" [totalRecords]="totalRecords" [paginator]="true"
+        [rowsPerPageOptions]="[10,50,100]" [showCurrentPageReport]="true"
+        currentPageReportTemplate="{totalRecords} kayıttan {first} ile {last} arası gösteriliyor" [rowHover]="true"
+        dataKey="id" [responsive]='true'>
+        <ng-template pTemplate="caption">
+            <div class="grid pt-3 pr-4 pb-0 pl-4">
+                <div class="col-12 md:col-6 flex md:flex-row md:justify-content-start md:align-items-center">
+                    <span class="font-bold m-0">
+                        <h1 class="m-0">Kullanıcı Rol Bilgileri</h1>
+                    </span>
+                </div>
+                <div class="col-12 md:col-6 flex justify-content-end">
+                    <button label="Yeni Kullanıcı Rolü Ekle" pButton pRipple pTooltip="Kullanıcı Rolü Ekle" icon="pi pi-plus"
+                        class="p-button-info p-button-sm ml-1" (click)="openNew()"></button>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th tooltipPosition="top" pTooltip="Adı girerek arama yapabilirsiniz" pSortableColumn="appUserFirstName">Adı
+                    <p-sortIcon field="appUserFirstName"></p-sortIcon>
+
+                </th>
+                <th> </th>
+
+                <th tooltipPosition="top" pTooltip="Soyadı girerek arama yapabilirsiniz" pSortableColumn="appUserLastName">Soyadı
+                  <p-sortIcon field="appUserLastName"></p-sortIcon>
+                </th>
+                <th> </th>
+                <th> </th>
+
+                <th tooltipPosition="top" pTooltip="Adı girerek arama yapabilirsiniz" pSortableColumn="roleName">Rol Adı
+                    <p-sortIcon field="roleName"></p-sortIcon>
+                </th>
+
+
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>
+                    <p-columnFilter #cFappUserFirstName [showMenu]="false" matchMode="equals" type="text" field="appUserFirstName"
+                        (input)="getFilter($event, cFappUserFirstName)"></p-columnFilter>
+                </th>
+                <th> </th>
+
+                <th>
+                    <p-columnFilter #cFappUserLastName [showMenu]="false" matchMode="equals" type="text" field="appUserLastName"
+                        (input)="getFilter($event, cFappUserLastName)"></p-columnFilter>
+                </th>
+                <th> </th>
+                <th> </th>
+
+                <th>
+
+                    <p-columnFilter #cFroleName [showMenu]="false" matchMode="equals" type="text" field="roleName"
+                        (input)="getFilter($event, cFroleName)"></p-columnFilter>
+                </th>
+
+
+                     <th> </th>
+                     <th> </th>
+
+
+
+
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-userRole>
+            <tr>
+
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <span class="p-column-title">Adı</span>
+                    {{userRole.appUserFirstName}}
+                </td>
+                <td> </td>
+
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <span class="p-column-title">Soyadı</span>
+                    {{userRole.appUserLastName}}
+                </td>
+                <td> </td>
+                <td> </td>
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <span class="p-column-title">Rol Adı</span>
+                    {{userRole.roleName}}
+                </td>
+
+
+                <td> </td>
+                <td> </td>
+
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <button pTooltip="Güncelle" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="updateUserRole(userRole)"></button>
+                    <button pTooltip="Sil" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2" (click)="deleteUserRole(userRole)"></button>
+
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-dialog [(visible)]="UserRoleDialog" *ngIf="UserRoleDialog"   [contentStyle]="{'overflow':'visible'}" [style]="{width: '450px'}"
+header="Kullanıcı Rol Bilgileri" [modal]="true" styleClass="p-fluid">
+<ng-template pTemplate="content">
+
+
+    <div class="p-field mt-2">
+        <label for="appUserFirstName">Adı </label>
+        <p-dropdown appendTo="body" styleClass="headerDropdown"
+        [options]="userInfos" optionLabel="firstName" optionValue="id" [(ngModel)]="userRole.appUserId">
+       </p-dropdown>
+
+    </div>
+    <div class="p-field mt-2">
+        <label for="roleName">Rolü </label>
+        <p-dropdown appendTo="body" styleClass="headerDropdown"
+        [options]="roles" optionLabel="name" optionValue="id" [(ngModel)]="userRole.roleId">
+       </p-dropdown>
+
+    </div>
+
+
+</ng-template>
+<ng-template pTemplate="footer">
+    <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-danger" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-success" (click)="saveUserRole()"></button>
+</ng-template>
+</p-dialog>
+
+
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog> -->

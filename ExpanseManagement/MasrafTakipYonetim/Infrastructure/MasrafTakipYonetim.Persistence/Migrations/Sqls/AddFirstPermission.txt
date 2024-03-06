@@ -1,0 +1,91 @@
+﻿
+  BEGIN
+SET ANSI_NULLS ON 
+SET QUOTED_IDENTIFIER ON
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'f1529130-174f-497d-bffc-f950a6c9be48')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('f1529130-174f-497d-bffc-f950a6c9be48','Kullanıcı Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  END;
+  BEGIN
+SET ANSI_NULLS ON 
+SET QUOTED_IDENTIFIER ON
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '038f5bc2-cde8-4cb5-8f5b-caa101d270dc')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('038f5bc2-cde8-4cb5-8f5b-caa101d270dc','Kullanıcıyı Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  END;
+  BEGIN
+SET ANSI_NULLS ON 
+SET QUOTED_IDENTIFIER ON
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '3f2dd240-15cd-4da3-9e7a-39fbd8170e5d')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('3f2dd240-15cd-4da3-9e7a-39fbd8170e5d','Kullanıcıyı Güncelle','2023-12-07 10:14:15.915',GETDATE(),0) END; 
+  END;
+  BEGIN
+SET ANSI_NULLS ON 
+SET QUOTED_IDENTIFIER ON
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'dfca0176-6595-478a-baef-b6bcc6d122d0')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('dfca0176-6595-478a-baef-b6bcc6d122d0','Kullanıcı Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '114ea6df-d9b7-4d31-8cbb-38c857607dec')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('114ea6df-d9b7-4d31-8cbb-38c857607dec','Kullanıcıya Rol Ata','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '2a5de3b8-7e33-4698-9715-162c7127b277')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('2a5de3b8-7e33-4698-9715-162c7127b277','Ödeme Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'db26f00f-528e-47aa-a554-ea58a850ebfd')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('db26f00f-528e-47aa-a554-ea58a850ebfd','Ödeme Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+ 
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '8e0f307f-6a1f-4ce0-95be-bf18b2d58040')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('8e0f307f-6a1f-4ce0-95be-bf18b2d58040','Ödeme Güncelle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'c202b47c-f290-4a65-89d3-077ec04096c2')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('c202b47c-f290-4a65-89d3-077ec04096c2','Ödeme Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '9e3b4d88-c9c4-49e2-ae47-a8731a03a6c8')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('9e3b4d88-c9c4-49e2-ae47-a8731a03a6c8','Harcama Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+ 
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'e6fe8495-fc7f-4afb-93e9-365854d6ffd8')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('e6fe8495-fc7f-4afb-93e9-365854d6ffd8','Harcama Tipi Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+ 
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '3ebd0551-df3d-458a-ae1e-c42496753730')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('3ebd0551-df3d-458a-ae1e-c42496753730','Harcama Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '7afa28c2-d3c8-4e36-85c1-b7e767625dde')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('7afa28c2-d3c8-4e36-85c1-b7e767625dde','Harcama Güncelle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+ 
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'b17300a5-9649-46ec-a164-3e17e28105ec')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('b17300a5-9649-46ec-a164-3e17e28105ec','Harcama Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '80fec2ed-7066-43d8-9f76-7cca7509f2f0')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('80fec2ed-7066-43d8-9f76-7cca7509f2f0','Rol Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'e697a1eb-36e0-46ec-80f8-1b49d4a1f8da')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('e697a1eb-36e0-46ec-80f8-1b49d4a1f8da','Rol Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '135D58DF-DC3D-4B32-859E-08DC06CCBB95')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('135D58DF-DC3D-4B32-859E-08DC06CCBB95','Rol Düzenle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+  
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '8ca75577-49ef-4eae-8a82-62ed5226fcd9')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('8ca75577-49ef-4eae-8a82-62ed5226fcd9','Rol Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+ 
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '201d81c2-2529-4848-8295-1bc410e328be')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('201d81c2-2529-4848-8295-1bc410e328be','Role Yetki Ata','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'CE3ABC52-EE2A-42A9-1B41-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('CE3ABC52-EE2A-42A9-1B41-08DBFF2D19BC','Kullanıcı Rolünü Düzenle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '33F75417-31B7-448A-1B42-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('33F75417-31B7-448A-1B42-08DBFF2D19BC','Kullanıcı Rolünü Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'A873DA6B-FC00-43BC-1B43-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('A873DA6B-FC00-43BC-1B43-08DBFF2D19BC','Kullanıcı Rolünü Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '5469AB53-F52F-4AEA-1B44-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('5469AB53-F52F-4AEA-1B44-08DBFF2D19BC','Rol Yetkisini Güncelle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '8AFE22D2-7CFA-488E-1B45-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('8AFE22D2-7CFA-488E-1B45-08DBFF2D19BC','Rol Yetkisini Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'E7B7B9F8-63E9-4E3C-1B46-08DBFF2D19BC')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('E7B7B9F8-63E9-4E3C-1B46-08DBFF2D19BC','Rol Yetkisini Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '1816FDFA-EDF3-4524-7B4F-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('1816FDFA-EDF3-4524-7B4F-08DC00DF567D','Şifre Değiştir','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'E9E27819-26AA-45AE-7B50-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('E9E27819-26AA-45AE-7B50-08DC00DF567D','Yetki Oluştur','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'B818795C-A405-4E9D-7B51-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('B818795C-A405-4E9D-7B51-08DC00DF567D','Yetki Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'DA0D03E9-73CF-493A-7B52-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('DA0D03E9-73CF-493A-7B52-08DC00DF567D','Yetki Listele','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '02726BF8-414D-4BE7-7B53-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('02726BF8-414D-4BE7-7B53-08DC00DF567D','Yetki Düzenle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '8D6D2F21-13D8-4549-7B54-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('8D6D2F21-13D8-4549-7B54-08DC00DF567D','Profil Bİlgisi Gör','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'B0ABD930-C975-4907-7B55-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('B0ABD930-C975-4907-7B55-08DC00DF567D','Profil Bilgisi Düzenle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = '4E94B809-B838-45F8-7B56-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('4E94B809-B838-45F8-7B56-08DC00DF567D','Harcama Kategorisi Ekle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'D8B6BEC5-DE06-4F01-7B57-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('D8B6BEC5-DE06-4F01-7B57-08DC00DF567D','Harcama Kategorisi Sil','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'B13781A8-0C82-4E08-7B59-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('B13781A8-0C82-4E08-7B59-08DC00DF567D','Harcama Kategorisi Gör','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'E39D3D96-7ADF-4665-7B5B-08DC00DF567D')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('E39D3D96-7ADF-4665-7B5B-08DC00DF567D','HarcamaKategorisi Düzenle','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+  IF NOT EXISTS(SELECT * FROM Permissions WHERE Id = 'F3C833AE-1C0D-4FD7-BBFE-08DC06AAB03A')  BEGIN INSERT INTO Permissions ([Id], [PermissionName],  [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('F3C833AE-1C0D-4FD7-BBFE-08DC06AAB03A','Kahve Kullanıcısı','2023-12-07 10:14:15.915',GETDATE(),0) END;
+
+ END;
+

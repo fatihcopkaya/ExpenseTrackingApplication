@@ -1,0 +1,5 @@
+﻿  BEGIN
+SET ANSI_NULLS ON 
+SET QUOTED_IDENTIFIER ON
+  IF NOT EXISTS(SELECT * FROM Wallets WHERE Id = 'cf8e1f25-a831-4ab0-9c01-436bf79b1bee')  BEGIN INSERT INTO Wallets ([Id], [TotalPayments], [TotalExpenses], [CreatedDate], [UpdatedDate], [IsDeleted]) VALUES ('cf8e1f25-a831-4ab0-9c01-436bf79b1bee',0,0,'2023-12-07 10:14:15.915',GETDATE(),0) END;
+  END;

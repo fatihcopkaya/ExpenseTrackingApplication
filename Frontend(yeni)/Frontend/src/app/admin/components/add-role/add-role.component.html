@@ -1,0 +1,176 @@
+<p-toast></p-toast>
+
+<div class="card">
+
+
+<p-table #dt  [value]="data" [lazy]="true" (onLazyLoad)="loadData($event)" [showPageLinks]="true" responsiveLayout="stack" [rows]="10" [totalRecords]="totalRecords" [paginator]="true"
+[rowsPerPageOptions]="[10,50,100]" [showCurrentPageReport]="true"  currentPageReportTemplate="{totalRecords} kayıttan {first} ile {last} arası gösteriliyor" [rowHover]="true"
+dataKey="id" [responsive]='true'>
+<ng-template pTemplate="caption">
+    <div class="grid pt-3 pr-4 pb-0 pl-4">
+        <div class="col-12 md:col-6 flex md:flex-row md:justify-content-start md:align-items-center">
+            <span class="font-bold m-0">
+                <h1 class="m-0">Rol İşlemleri</h1>
+            </span>
+        </div>
+        <div class="col-12 md:col-6 flex justify-content-end">
+            <button label="Yeni Rol Yetki Ekle" pButton pRipple pTooltip="Yeni Rol Yetki Ekle" icon="pi pi-plus"
+                class="p-button-info p-button-sm ml-1" (click)="openNew()"></button>
+                <button label="Rol Ekle" pButton pRipple pTooltip="Rol Ekle" icon="pi pi-plus"
+                class="p-button-success p-button-sm ml-1" (click)="openNewAddRoles()"></button>
+
+        </div>
+
+    </div>
+</ng-template>
+<ng-template pTemplate="header">
+
+    <tr>
+        <th tooltipPosition="top" pTooltip=" Rol Adını girerek arama yapabilirsiniz" pSortableColumn=" roleName">Rol Adı
+            <p-sortIcon field=" roleName"></p-sortIcon>
+
+        </th>
+        <th> </th>
+        <th> </th>
+        <th tooltipPosition="top" pTooltip="Soyadı girerek arama yapabilirsiniz" pSortableColumn="permissionName">Yetki Adı
+          <p-sortIcon field="permissionName"></p-sortIcon>
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+
+    <tr>
+        <th>
+             <!-- <p-columnFilter [showMenu]="false" matchMode="equals" *ngSwitchCase="'name'" type="text" field="name" (input)="filterUsers($event, col.field)"></p-columnFilter>  -->
+            <p-columnFilter #cFroleName [showMenu]="false" matchMode="equals" type="text" field="roleName"
+                (input)="getFilter($event, cFroleName)"></p-columnFilter>
+        </th>
+        <th> </th>
+        <th> </th>
+
+        <th>
+            <p-columnFilter #cFpermissionName [showMenu]="false" matchMode="equals" type="text" field="permissionName"
+                (input)="getFilter($event, cFpermissionName)"></p-columnFilter>
+        </th>
+        <th></th>
+             <th> </th>
+             <th> </th>
+
+             <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rolePermission>
+            <tr>
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <span class="p-column-title"> Rol Adı</span>
+                    {{rolePermission.roleName}}
+                </td>
+                <td> </td>
+                <td> </td>
+
+
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <span class="p-column-title">Yetki Adı</span>
+                    {{rolePermission.permissionName}}
+                </td>
+                <td> </td>
+                <td> </td>
+
+
+
+                <td style="width:15%; min-width:15rem;word-break: break-word;">
+                    <button pTooltip="Güncelle" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-info mr-2" (click)="openUpdateRolePermission(rolePermission)"></button>
+                    <!-- <button pTooltip="Sil" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2"  (click)="deleteRolePermission(rolePermission)"></button> -->
+                    <!-- <button pTooltip="Roller" pButton pRipple icon="pi pi-verified" class="p-button-rounded p-button-secondary mr-2" (click)="openAuthoritiesDialog(roles)"></button> -->
+                </td>
+                <td> </td>
+
+
+                <!-- Update Pop-up -->
+                    <p-dialog [(visible)]="updateRolePermissionDialog" *ngIf="updateRolePermissionDialog" [contentStyle]="{'overflow':'visible'}" [style]="{width: '450px'}"
+                    header="Rol Yetki Bilgileri Güncelle" [modal]="true" styleClass="p-fluid">
+                    <ng-template pTemplate="content">
+                        <div class="p-field mt-2">
+                            <label for="updateRoleId">Rol Adı</label>
+                            <p-dropdown appendTo="body" styleClass="headerDropdown"
+                                [options]="roles" optionLabel="name" optionValue="id" [(ngModel)]="rolePermissions.roleId">
+                            </p-dropdown>
+                        </div>
+                        <div class="p-field mt-2">
+                            <label for="updatePermissionIds">Yetki Seç</label>
+                            <p-dropdown appendTo="body" styleClass="headerDropdown"
+                                [options]="permissions" optionLabel="permissionName" optionValue="id" [(ngModel)]="rolePermissions.permissionIds">
+                            </p-dropdown>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-danger" (click)="hideUpdateDialog()"></button>
+                        <!-- <button pButton pRipple label="Güncelle" icon="pi pi-check" class="p-button-success" (click)="saveUpdateRolePermission()"></button> -->
+                    </ng-template>
+                    </p-dialog>
+
+
+                  <!-- Aşağı kısım Düzenleye basıldığında açılan pop-up kısmıdır -->
+                <p-dialog [(visible)]="rolePermissionDialog" *ngIf="rolePermissionDialog"   [contentStyle]="{'overflow':'visible'}" [style]="{width: '450px'}"
+                    header="Rol Yetki Bilgileri" [modal]="true" styleClass="p-fluid">
+                    <ng-template pTemplate="content">
+
+
+
+                    <div class="p-field mt-2">
+                        <label for="roleName">Rol Adı</label>
+                        <p-dropdown appendTo="body" styleClass="headerDropdown"
+                        [options]="roles" optionLabel="name" optionValue="id" [(ngModel)]="rolePermissions.roleId">
+                        </p-dropdown>
+
+                    </div>
+
+                    <div class="p-field mt-2"> <label for="permissionName">Yetkiler</label>
+                        <p-multiSelect
+                        appendTo="body" styleClass="headerDropdown"
+                        [options]="permissions" optionLabel="permissionName" optionValue="id"
+                        [(ngModel)]="rolePermissions.permissionIds" >
+                    </p-multiSelect>
+                    </div>
+
+
+                    </ng-template>
+                <ng-template pTemplate="footer">
+
+                    <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-danger" (click)="hideDialog()"></button>
+                    <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-success" (click)="saveRolePermission()"></button>
+                    </ng-template>
+            </p-dialog>
+
+
+
+            <p-dialog [(visible)]="addRoleDialog" *ngIf="addRoleDialog"   [contentStyle]="{'overflow':'visible'}" [style]="{width: '450px'}"
+            header="Rol" [modal]="true" styleClass="p-fluid">
+            <ng-template pTemplate="content">
+
+                <div class="p-field mt-2">
+                    <label for="name">Rol Ekle</label>
+                    <input type="text" pInputText id="roleName" [(ngModel)]="rolePermissions.roleName" required />
+                    <small class="p-invalid" *ngIf="submitted && !rolePermissions.roleName" style="color:rgb(253, 5, 5)">Rol alanı Girilmek zorundadır.</small>
+                </div>
+     </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-danger" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-success" (click)="saveRoles()"></button>
+    </ng-template>
+   </p-dialog>
+  </tr>
+</ng-template>
+</p-table>
+</div>
+
+
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+

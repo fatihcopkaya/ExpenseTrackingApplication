@@ -1,0 +1,1 @@
+export enum AccountPassivateReasonEx { Active = 0, CancelOrChargebackTopup = 4, UserRequest = 100, AccountCloseRequest = 101, AccountFreeze = 102, AccountStolen = 103, IdleMSISDN = 104, ParentFreeze = 105 }

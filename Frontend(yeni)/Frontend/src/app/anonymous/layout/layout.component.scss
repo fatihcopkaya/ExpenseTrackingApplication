@@ -1,0 +1,13 @@
+@media (max-width: 1920px ){
+    .layout-wrapper .layout-main-container {
+        height: 100%;
+        width: 100%;
+       
+       }
+}
+    .layout-main-container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        transition: margin-left 0.2s;
+       }
